@@ -1,0 +1,143 @@
+/*-- scss:defaults --*/
+
+$body-color: #fff;
+
+
+fade{
+  font-size: 1.75rem;
+  color: #696666;
+}
+
+figure{
+  text-align: center;
+}
+
+hr{
+  border-top: 2px solid white;
+  border-bottom: none;
+  margin-top: 0;
+}
+
+td{
+  border-bottom: none !important;
+}
+
+tr:last-child{
+  border-bottom: 1px solid white;
+}
+
+tr:first-child{
+  border-top: 1px solid white;
+}
+
+
+
+caption{
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: bolder;
+}
+
+.subheading{
+ font-size: 3rem;
+ text-align: center;
+ padding-top: 10px;
+}
+
+.quarto-title-authors{
+  color: darkgray;
+  font-style: italic;
+}
+
+.smaller-font{
+  font-size: 2rem;
+}
+
+.quote{
+  font-size: 1.5em;
+  font-style: italic;
+  font-weight: bolder;
+}
+.reference{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 0.75em;
+  font-style: italic;
+  color: darkgray;
+}
+
+.cass, .george, .csText, .gwText{
+  position: absolute;
+}
+
+.cass, .george{
+  height: 260px;
+  clip-path: ellipse(50% 40% at 50% 40%);
+  scale: 0.7;
+  bottom: -50px; 
+  left: 25px; 
+}
+
+.george, .gwText{
+  right: 100px;
+  left: auto;
+}
+
+.csText, .gwText{
+  font-size: 2rem;
+  bottom: -5px;
+  font-family: Amatic SC;
+  color: #068de9;
+  font-weight: 1000;
+}
+
+.csText{
+  left:38px;
+}
+
+.gwText{
+  right: 120px;
+}
+
+.pca-left{
+  left:25px;
+  height:325px;
+  width:450px;
+  position: absolute;
+  clip-path: inset(0px 50px 0px 50px);
+}
+
+.pca-right{
+  right:25px;
+  height:325px;
+  width:450px;
+  position:absolute;
+}
+
+.description {
+  font-size: 1.75rem;
+  font-style: italic;
+}
+
+.question-heading{
+  font-size: 0.8em !important;
+}
+
+.center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.r{
+  padding-left: 300px;
+}
+
+.rstudio{
+  padding-left: 50px;
+}
+
+.mid p ul{
+  font-size: 2.2rem;
+}
