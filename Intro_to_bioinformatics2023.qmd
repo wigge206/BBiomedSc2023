@@ -12,13 +12,12 @@ header-includes: |
 
 ## Lecture Plan
 
-- Background 
-    - Genomic variation
-    -  Copy number variants
-    -  Genetic risk in Cancer
-    -  Computational biology: Pro's <fade>(and con's)</fade> 
-    
-- Case example: Endometerial cancer and copy number variants
+-   Background
+    -   Genomic variation
+    -   Copy number variants
+    -   Genetic risk in Cancer
+    -   Computational biology: Pro's <fade>(and con's)</fade>
+-   Case example: Endometrial cancer and copy number variants
 
 ```{r load_data, echo=F, eval=T, cache=T}
 library(dplyr)
@@ -33,26 +32,27 @@ df<-data.table::rbindlist(df, fill=T, idcol = "GWAS")
 <!-- . . . -->
 
 <!-- [Cassie Stylianou]{class='csText'}  -->
+
 <!-- [George Wiggins]{class='gwText'}  -->
 
 <!-- ![Cassie Stylianou](images/cass.jpg){.cass} ![George Wiggins](images/cropped.jpg){.george} -->
-
 
 ## Genomic variation
 
 ![](images/typeofvariants.png)
 
 ## Copy number variants
-:::{.nonincremental}
 
-- Copy number variants (CNV) are a subset of structural variants
-    - CNVs are the number of copies of a DNA loci (i.e. genes) that vary between individuals.
+::: nonincremental
+-   Copy number variants (CNV) are a subset of structural variants
 
-- 10% of the human genome contributes to CNVs^1^, 1% of human genome contributes to SNPs.
+    -   CNVs are the number of copies of a DNA loci (i.e. genes) that vary between individuals.
 
-- Rare CNV (<1% MAF) are 800x more likely to be deleterious compared to rare SNV^2^. 
+-   10% of the human genome contributes to CNVs^1^, 1% of human genome contributes to SNPs.
 
-:::{.reference}
+-   Rare CNV (\<1% MAF) are 800x more likely to be deleterious compared to rare SNV^2^.
+
+::: reference
 ^1^ Zarrei et al. (2015) Nat Rev Genet. 16, 172-183.
 
 ^2^ HJ Abel et al. (2020). Nature. 583,83-89.
@@ -63,22 +63,21 @@ df<-data.table::rbindlist(df, fill=T, idcol = "GWAS")
 
 ## CNV detection
 
-
-:::{.nonincremental style="margin-left:-100px; width:57.5%"}
-1. Fluorescence in situ hybridization (FISH) 
-2. Array Comparative genomic hybridization (CGH)
-3. qPCR
-4. MLPA
-5. SNP array
-6. Next-generation sequencing
+::: {.nonincremental style="margin-left:-100px; width:57.5%"}
+1.  Fluorescence in situ hybridization (FISH)
+2.  Array Comparative genomic hybridization (CGH)
+3.  qPCR
+4.  MLPA
+5.  SNP array
+6.  Next-generation sequencing
 :::
 
 ![](images/CNV_detection.png){.absolute top="50px" right="-100px" width="55%"}
 
-##
+## 
 
-:::{.quote}
-Cancer is the most common human genetic disease. The transition from a normal cell to a malignant cancer is driven by changes to a cell’s DNA.
+::: quote
+Cancer is the most common human genetic disease. The transition from a normal cell to a malignant cancer is driven by changes to a cell's DNA.
 :::
 
 ![](images/Tumor_progression.png){.absolute bottom="0" width="1000"}
@@ -88,26 +87,22 @@ Cancer is the most common human genetic disease. The transition from a normal ce
 ## Genetic Risk of Cancer
 
 DNA variants alter the risk of cancer.
-  
-![](images/BC_risk_B1B2.png){.absolute left="0" top="200" width="500"}
-![](images/B1_B2_risk.png){.absolute right="20" top="200" width='450'}
 
-:::{.reference}
+![](images/BC_risk_B1B2.png){.absolute left="0" top="200" width="500"} ![](images/B1_B2_risk.png){.absolute right="20" top="200" width="450"}
+
+::: reference
 Kuchenbaecker et al. (2017) JAMA. 317(23), 2402-2416.
 :::
 
+## Genetic Risk of Cancer {.smaller}
 
-## Genetic Risk of Cancer{.smaller}
+There are 313 common genetic variants associated with a low increase in breast cancer risk. There is up to a 4-fold increase in breast cancer for woman that harbour the greatest number of these risk allele^1^.
 
-There are 313 common genetic variants associated with a low increase in breast cancer risk. There is up to a 4-fold increase in breast cancer for woman that harbour the greatest number of these risk allele^1^.  
-  
-![](images/BC_risk_common.png){.absolute left="0" width="500"}
-![](images/polygenic.png){.absolute right="150" width="320"}
+![](images/BC_risk_common.png){.absolute left="0" width="500"} ![](images/polygenic.png){.absolute right="150" width="320"}
 
-:::{.reference}
-^1^ N. Zeinomar &  W.K. Chung (2020) Ann Intern Med. 174(3), 408-412.
+::: reference
+^1^ N. Zeinomar & W.K. Chung (2020) Ann Intern Med. 174(3), 408-412.
 :::
-
 
 ## Why Computational Biology?
 
@@ -250,17 +245,14 @@ Cassie's dataset
 
 ## SNP array and CNVs {.smaller auto-animate="true"}
 
-:::{style="right:-100px;position:absolute;width:45%;font-size: 0.9em;"}
+::: {style="right:-100px;position:absolute;width:45%;font-size: 0.9em;"}
 $BAF = A/B$
 
 $Log R Ratio = log2(R~observed~/R~expected~)$
-
 :::
 
-:::{style="right:-100px;position:absolute;width:45%;top:190px"}
-Deletion (example):
-Only one copy of DNA, therefore the observed intensity (R) is less than expected and all the signal will either be the A (BAF=0) or B (BAF=1) allele.
-
+::: {style="right:-100px;position:absolute;width:45%;top:190px"}
+Deletion (example): Only one copy of DNA, therefore the observed intensity (R) is less than expected and all the signal will either be the A (BAF=0) or B (BAF=1) allele.
 :::
 
 ![](plots/CNVvalling.png){.absolute top="80" left="-100" width="750"}
@@ -272,21 +264,31 @@ Only one copy of DNA, therefore the observed intensity (R) is less than expected
 <!-- ## Data/results interrogation -->
 
 <!-- ::: columns -->
+
 <!-- ::: {.column width="65%"} -->
+
 <!-- Do we believe the results? -->
 
 <!-- Can the results be explained away by limitations/biases? -->
+
 <!-- ::: -->
 
 <!-- ::: {.column style="font-size:1.1rem; width:35%"} -->
+
 <!-- [GWAS results]{style="font-size:2.5rem;"} -->
 
 <!-- | CNV type | No. genes tested | -->
+
 <!-- |----------|-----------------:| -->
+
 <!-- | Del      |            5,608 | -->
+
 <!-- | Dup      |            7,887 | -->
+
 <!-- | LoF      |            8,071 | -->
+
 <!-- ::: -->
+
 <!-- ::: -->
 
 <!-- . . . -->
@@ -294,7 +296,9 @@ Only one copy of DNA, therefore the observed intensity (R) is less than expected
 <!-- [Let's ask some *very basic* questions:]{style="color:#068de9"} -->
 
 <!-- -   How many associations were significant? -->
+
 <!-- -   How many genes were tested across by all three GWAS? -->
+
 <!-- -   How many significant association overlap (Venn Diagram)? -->
 
 <!-- ## Excel vs R {.smaller} -->
@@ -306,24 +310,35 @@ Only one copy of DNA, therefore the observed intensity (R) is less than expected
 <!-- Excel (easy): -->
 
 <!-- -   filter by p-value ➙ count rows -->
+
 <!--     -   repeat per GWAS -->
 
 <!-- ::: {.fragment .fade-in} -->
+
 <!-- R (easy/over-engineered): -->
 
 <!-- ```{r eval=F, echo=T} -->
+
 <!-- #| code-line-numbers: "1-7|9" -->
 
 <!-- library(openxlsx) -->
+
 <!-- library(tidyverse) -->
+
 <!-- ## Read in data -->
+
 <!-- sheetNames <- getSheetNames("data/GWAS_3probe.xlsx") -->
+
 <!-- df <- lapply(sheetNames, function(i) read.xlsx("data/GWAS_3probe.xlsx", sheet = i)) -->
+
 <!-- names(df) <- sheetNames -->
+
 <!-- df<-data.table::rbindlist(df, fill=T, idcol = "GWAS") -->
 
 <!-- df %>% group_by(GWAS) %>% summarise(n=length(P_value <0.05)) -->
+
 <!-- ``` -->
+
 <!-- ::: -->
 
 <!-- ## Excel vs R {.smaller} -->
@@ -335,26 +350,39 @@ Only one copy of DNA, therefore the observed intensity (R) is less than expected
 <!-- Excel (moderate/cumbersome): -->
 
 <!-- 1.  Create unique list of all genes -->
+
 <!-- 2.  `=countif(AllGenesinGWAS1, gene)` -->
+
 <!--     -   repeat per GWAS -->
+
 <!-- 3.  Sum counts ➙ filter and count rows equal to three -->
 
 <!-- ::: {.fragment .fade-in} -->
+
 <!-- R (easy): -->
 
 <!-- ```{r eval=F, echo=T} -->
+
 <!-- #| code-line-numbers: "9" -->
 
 <!-- library(openxlsx) -->
+
 <!-- library(tidyverse) -->
+
 <!-- ## Read in data -->
+
 <!-- sheetNames <- getSheetNames("data/GWAS_3probe.xlsx") -->
+
 <!-- df <- lapply(sheetNames, function(i) read.xlsx("data/GWAS_3probe.xlsx", sheet = i)) -->
+
 <!-- names(df) <- sheetNames -->
+
 <!-- df<-data.table::rbindlist(df, fill=T, idcol = "GWAS") -->
 
 <!-- sum(table(df$Gene.ID) ==3) # only line to change -->
+
 <!-- ``` -->
+
 <!-- ::: -->
 
 <!-- ## Excel vs R {.smaller} -->
@@ -366,6 +394,7 @@ Only one copy of DNA, therefore the observed intensity (R) is less than expected
 <!-- Excel (Difficult): -->
 
 <!-- -   Nested countifs with multiple criteria? -->
+
 <!-- -   Is a very manual process -->
 
 <!-- ## Excel vs R {.smaller} -->
@@ -375,27 +404,43 @@ Only one copy of DNA, therefore the observed intensity (R) is less than expected
 <!-- R (easy): -->
 
 <!-- ```{r tri-venn, eval=T, echo=T} -->
+
 <!-- #| output-location: column -->
+
 <!-- #| code-line-numbers: "3,11-18" -->
+
 <!-- #| cache: true -->
+
 <!-- #| fig-height: 7.5 -->
+
 <!-- library(openxlsx) -->
+
 <!-- library(tidyverse) -->
+
 <!-- library(ggvenn) ## New package -->
 
 <!-- ## Read in data -->
+
 <!-- sheetNames <- getSheetNames("data/GWAS_3probe.xlsx") -->
+
 <!-- df <- lapply(sheetNames, function(i) read.xlsx("data/GWAS_3probe.xlsx", sheet = i)) -->
+
 <!-- names(df) <- sheetNames -->
+
 <!-- df<-data.table::rbindlist(df, fill=T, idcol = "GWAS") -->
 
 <!-- x<-list( -->
+
 <!--   DEL = df$Gene.ID[df$P_value<0.05 & df$GWAS == "DEL"],  -->
+
 <!--   DUP = df$Gene.ID[df$P_value<0.05 & df$GWAS == "DUP"], -->
+
 <!--   LOF = df$Gene.ID[df$P_value<0.05 & df$GWAS == "LOF"]  -->
+
 <!-- ) -->
 
 <!-- ggvenn(x,fill_color = c("#0073C2FF", "#EFC000FF",  "#CD534CFF"), -->
+
 <!--   stroke_size = 1, set_name_size = 8, text_size = 8, show_percentage = F) -->
 
 <!-- ``` -->
@@ -409,13 +454,13 @@ Cassie's loss of function data used CNV predicted that:
 1)  Delete a gene (part of or entire gene)
 2)  Partially duplicated a gene (**not** whole gene)
 
-:::{.fragment .fade-in-then-out}
+::: {.fragment .fade-in-then-out}
 ![](images/LoF_selection.png){.absolute bottom="180" width="520" left="225"}
 :::
 
 . . .
 
-Duplication are frequently in tandem, therefore partial gene duplications would disrupt coding sequence.
+Duplication are frequently in tandem, therefore a partial gene duplication would disrupt the coding sequence.
 
 . . .
 
@@ -425,9 +470,7 @@ Duplication are frequently in tandem, therefore partial gene duplications would 
 
 ## Whole gene duplications {.smaller .nonincremental}
 
-
 1)  Find significant associations (genes) unique to the duplication GWAS [(i.e. whole gene duplications)]{style="color:#068de9"}
-
 
 . . .
 
@@ -473,35 +516,31 @@ More analysis (e.g. Pathway analysis) and more context (e.g. what tissue is gene
 
 ## Pathway analysis {.mid}
 
-- Size reduction: 100's-1000’s of genes ➙ dozens of pathways
-- Tells a biological story
+-   Size reduction: 100's-1000's of genes ➙ dozens of pathways
+-   Tells a biological story
 
 . . .
 
 [Many]{style="font-weight:1000"} different methods
 
-:::{.fragment .fade-out}
-
+::: {.fragment .fade-out}
 ![](images/ORA.png){.absolute bottom="70" left="30"}
-
 :::
-:::{.fragment style="line-height:0.8"}
+
+::: {.fragment style="line-height:0.8"}
 [Many]{style="font-weight:1000"} annotation (gene groupings)
 
-- KEGG
-- Reactome
-- Wikipaths
-- Gene ontology (GO)
-
-
+-   KEGG
+-   Reactome
+-   Wikipaths
+-   Gene ontology (GO)
 :::
 
 ## Performing pathway analysis {.smaller}
 
 Webtools:
 
-[Enrichr](https://maayanlab.cloud/Enrichr/), [Panther](http://www.pantherdb.org/), 
-[DAVID](https://david.ncifcrf.gov/), ...
+[Enrichr](https://maayanlab.cloud/Enrichr/), [Panther](http://www.pantherdb.org/), [DAVID](https://david.ncifcrf.gov/), ...
 
 . . .
 
@@ -538,7 +577,6 @@ barplot(ego, color="pvalue")
 
 More interesting enrichment analysis for significant deletions:
 
-
 ```{r dels, echo=F, eval=T}
 #| cache: true
 #| fig-height: 7.5
@@ -556,11 +594,9 @@ ego2 <- enrichGO(gene          = x,
 barplot(ego2, color="pvalue")
 ```
 
-
 ## Utlising public data
 
-[**Human Protein Atlas, GTEx**]{style="color:#068de9"}, TCGA and CCLE 
-
+[**Human Protein Atlas, GTEx**]{style="color:#068de9"}, TCGA and CCLE
 
 ```{r hpar, cache=TRUE}
 library(tidyverse)
@@ -591,10 +627,9 @@ cowplot::plot_grid(p1,p2, nrow=1)
 
 ```
 
-
 ## Utlising public data
 
-Human Protein Atlas, GTEx, [**TCGA**]{style="color:#068de9"} and CCLE 
+Human Protein Atlas, GTEx, [**TCGA**]{style="color:#068de9"} and CCLE
 
 ```{r TCGA, cache=TRUE}
 library(tidyverse)
@@ -638,7 +673,7 @@ cowplot::plot_grid(p1,p2)
 
 ## Utlising public data
 
-Human Protein Atlas, GTEx, TCGA and [**CCLE**]{style="color:#068de9"} 
+Human Protein Atlas, GTEx, TCGA and [**CCLE**]{style="color:#068de9"}
 
 ```{r cell_line}
 library(tidyverse)
@@ -657,10 +692,9 @@ ggplot(x, aes(x=tissue, y=log2(rna_expression+0.5))) + geom_boxplot(fill='grey')
   theme(axis.text.x = element_blank())+ ggtitle("Gene expression in cells lines by tissue") + facet_wrap(.~gene)
 ```
 
-
 ## Utlising public data
 
-Human Protein Atlas, GTEx, TCGA and [**CCLE**]{style="color:#068de9"} 
+Human Protein Atlas, GTEx, TCGA and [**CCLE**]{style="color:#068de9"}
 
 ```{r CCLE_2}
 #| fig-width: 9.5
@@ -674,9 +708,10 @@ x %>% filter(tissue== "ENDOMETRIUM") %>% mutate(cell_line= str_extract(cell_line
   ggtitle("Gene expression in endometrial cells lines")
 ```
 
-
 ## Ranking potential candidates
+
 ```{r}
+#| fig-width: 4
 TCGA <- read.csv("data/TCGA_ucec_geneDosage.csv")
 HPA <- read.csv("data/HPA_expressionScore.csv")
 load("data/depmap_tpm.RData")
@@ -704,10 +739,23 @@ TCGA %>% mutate(dosage_score =dosage_score) %>% left_join(HPA, by=c("Gene" = "Ge
   pivot_longer(c("exps.score", "dosage_score", "AN3CA", "ISHIKAWAHERAKLIO02ER"))  %>% mutate(name = fct_relevel(name, "exps.score", "dosage_score", "AN3CA","ISHIKAWAHERAKLIO02ER")) %>%
   ggplot(aes(x=name, y=Gene, fill=value)) + geom_tile(color='black')+
   scale_fill_gradient2(low = "#075AFF",
-                       high = "#FF0000") + theme_bw() +
-    scale_x_discrete(labels=c("Endometrial expression", "Gene Dosage", "AN3CA", "Ishikawa"))+
+                       high = "#FF0000") + theme_bw(base_size = 10) +
+    scale_x_discrete(labels=c("Endo. exprs", "Gene Dosage", "AN3CA", "Ishikawa"))+
   theme(axis.title = element_blank())
 ```
 
+##  {.final}
 
-## {.final}
+![](images/final.png){.absolute style="top:-10px; right:-200px; scale:1.25"}
+
+<!-- [Questions]{style="font-size:2em;top:20px"} -->
+
+::: {style="color:#0666a8; position: absolute;font-size: 160px;top: 160px; text-transform: uppercase;left: -80px;"}
+Questions?
+:::
+
+::: {style="position:absolute; bottom:40px; font-size: 0.6em"}
+[*Lecture slides and code:*]{style="color: #068de9;font-size:1.5em"} https://github.com/wigge206/BBiomedSc2023
+
+[*Email:*]{style="color: #068de9;font-size:1.5em"} george.wiggins\@otago.ac.nz
+:::
